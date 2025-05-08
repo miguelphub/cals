@@ -7,7 +7,7 @@
 html, body {
   height: 100%;
   width: 100%;
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; 
 }
 
 body {
@@ -39,7 +39,7 @@ body {
   border-radius: 15px;
   width: 90%;
   max-width: 350px;
-  border: 10px solid black;
+  border: 2px solid black;
   box-shadow: 0 0 20px cyan, 0 0 40px cyan, 0 0 60px cyan;
   animation: neon-glow 1.5s ease-in-out infinite alternate;
 }

@@ -8,7 +8,7 @@ body {
 /* Fondo con cuadrícula */
 .fondo {
     display: flex;
-    align-items: center;
+    align-items: center; 
     justify-content: center;
     height: 100vh;
     background-image: radial-gradient(#444 1px, transparent 1px);
@@ -22,7 +22,7 @@ body {
     border-radius: 15px;
     width: 300px;
     box-shadow: 0 0 25px 10px #00f0ff; /* Efecto de luz */
-    border: 5px solid black;
+    border: 2px solid black;
     text-align: center;
 }
 
