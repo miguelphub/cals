@@ -5,33 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sellador</title>
   <link rel="stylesheet" href="css/sellador.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
     <div class="fondo">
+      <a href="inicio.html" class="back-button">
+        <i class="fa-solid fa-arrow-left"></i>
+      </a>
+      
         <div class="container">
-            <h2>Sellador</h2>
+            <center><h2>Sellador</h2></center>
 
-            <label for="piezas">Cantidad de piezas:</label>
-            <input type="number" id="piezas" placeholder="Ej. 13086" />
+            <label for="piezas">Cantidad de pcs:</label>
+            <input type="number" id="piezas" placeholder="" />
 
-            <label for="porCaja">Cantidad por caja:</label>
-            <input type="number" id="porCaja" placeholder="Ej. 9" />
+            <label for="porCaja">Pcs por caja:</label>
+            <input type="number" id="porCaja" placeholder="" />
 
-            <label for="cajas">Cantidad de cajas:</label>
-            <input type="number" id="cajas" readonly />
+            <label for="largo">Largo de la caja:</label>
+            <input type="number" id="largo" placeholder="" />
 
-            <label for="largo">Largo de la caja (pulgadas):</label>
-            <input type="number" id="largo" placeholder="Ej. 12.5" />
+            <label for="ancho">Ancho de la caja:</label>
+            <input type="number" id="ancho" placeholder="" />
 
-            <label for="ancho">Ancho de la caja (pulgadas):</label>
-            <input type="number" id="ancho" placeholder="Ej. 8.5" />
-
-            <label for="forma">Forma de empaque:</label>
+            <label for="forma">Sellado de caja:</label>
             <select id="forma">
                 <option value="Normal">Normal</option>
                 <option value="H">H</option>
             </select>
+
+            <label for="cajas">Total de cajas:</label>
+            <input type="number" id="cajas" readonly />
 
             <button onclick="calcularSelladores()">Calcular</button>
 

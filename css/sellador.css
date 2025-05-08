@@ -8,7 +8,7 @@ body {
 /* Fondo con cuadrícula */
 .fondo {
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: center;
     height: 100vh;
     background-image: radial-gradient(#444 1px, transparent 1px);
@@ -21,9 +21,8 @@ body {
     padding: 25px;
     border-radius: 15px;
     width: 300px;
-    box-shadow: 0 0 25px 10px #00f0ff; /* Efecto de luz */
     border: 2px solid black;
-    text-align: center;
+    text-align: left;
 }
 
 /* Título */
@@ -38,7 +37,7 @@ input, select {
     padding: 10px;
     margin: 5px 0 15px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     box-sizing: border-box;
     font-size: 16px;
 }
@@ -67,3 +66,28 @@ button:hover {
     font-size: 16px;
     color: #222;
 }
+.back-button {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    font-size: 2rem; /* Se adapta bien en pantallas pequeñas */
+    color: #0d013a;
+    z-index: 1000;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+  }
+  
+  .back-button:hover {
+    transform: scale(1.1);
+    color: #620000;
+  }
+  
+  /* Opcional: más ajustes en pantallas muy pequeñas */
+  @media (max-width: 480px) {
+    .back-button {
+      font-size: 1.8rem;
+      top: 0.8rem;
+      left: 0.8rem;
+    }
+  }
+  

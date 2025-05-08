@@ -1,74 +1,89 @@
-/* Centrado adaptable a cualquier dispositivo */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background: #111;
+
+}
+
+.container .loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+
+.container .loader span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fff;
+  pointer-events: none;
+  animation: animateThreads 5s linear infinite;
+}
+
+.container .loader span:nth-child(1) {
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+}
+
+.container .loader span:nth-child(2) {
+  animation-direction: reverse;
+  border-radius: 67% 33% 70% 30% / 75% 65% 35% 25%;
+}
+
+.container .loader span:nth-child(3) {
+  animation-duration: 3s;
+  border-radius: 52% 48% 70% 30% / 41% 65% 35% 59%;
+}
+
+@keyframes animateThreads {
+  0% {
+      transform: rotate(0deg);
   }
-  
-  .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  100% {
+      transform: rotate(360deg);
   }
-  
-  /* Spinner */
-  .spinner {
-    --size: 30px;
-    --first-block-clr: #005bba;
-    --second-block-clr: #fed500;
-    --clr: #111;
-    width: 100px;
-    height: 100px;
-    position: relative;
+}
+
+.container .loader h2 {
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+}
+.back-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem; /* Se adapta bien en pantallas pequeñas */
+  color: #444444;
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+  transform: scale(1.1);
+  color: #787777;
+}
+
+/* Opcional: más ajustes en pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .back-button {
+    font-size: 1.8rem;
+    top: 0.8rem;
+    left: 0.8rem;
   }
-  
-  .spinner::after, .spinner::before {
-    box-sizing: border-box;
-    position: absolute;
-    content: "";
-    width: var(--size);
-    height: var(--size);
-    top: 50%;
-    animation: up 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
-    left: 50%;
-    background: var(--first-block-clr);
-  }
-  
-  .spinner::after {
-    background: var(--second-block-clr);
-    top: calc(50% - var(--size));
-    left: calc(50% - var(--size));
-    animation: down 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
-  }
-  
-  @keyframes down {
-    0%, 100% {
-      transform: none;
-    }
-    25% {
-      transform: translateX(100%);
-    }
-    50% {
-      transform: translateX(100%) translateY(100%);
-    }
-    75% {
-      transform: translateY(100%);
-    }
-  }
-  
-  @keyframes up {
-    0%, 100% {
-      transform: none;
-    }
-    25% {
-      transform: translateX(-100%);
-    }
-    50% {
-      transform: translateX(-100%) translateY(-100%);
-    }
-    75% {
-      transform: translateY(-100%);
-    }
-  }
-  
+}

@@ -7,7 +7,7 @@
 html, body {
   height: 100%;
   width: 100%;
-  font-family: Arial, sans-serif; 
+  font-family: Arial, sans-serif;
 }
 
 body {
@@ -40,8 +40,6 @@ body {
   width: 90%;
   max-width: 350px;
   border: 2px solid black;
-  box-shadow: 0 0 20px cyan, 0 0 40px cyan, 0 0 60px cyan;
-  animation: neon-glow 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes neon-glow {
@@ -77,3 +75,28 @@ button:hover {
   font-weight: bold;
   text-align: center;
 }
+.back-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem; /* Se adapta bien en pantallas pequeñas */
+  color: #0d013a;
+  z-index: 1000;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+  transform: scale(1.1);
+  color: #620000;
+}
+
+/* Opcional: más ajustes en pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .back-button {
+    font-size: 1.8rem;
+    top: 0.8rem;
+    left: 0.8rem;
+  }
+}
+
