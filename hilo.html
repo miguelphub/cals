@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spinner Centered</title>
-  <link rel="stylesheet" href="css/hilo.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conos de Hilo</title>
+  <link rel="stylesheet" href="css/hilo.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  
-
-  <div class="container">
+  <div class="fondo">
     <a href="inicio.html" class="back-button">
       <i class="fa-solid fa-arrow-left"></i>
     </a>
-    <div class="loader">
-      <span></span>
-      <span></span>
-      <span></span>
-      <h2>Loading...</h2>
+
+    <div class="container">
+      <center><h2>Conos de Hilo</h2></center>
+
+      <label for="piezas">Cantidad de pcs:</label>
+      <input type="number" id="piezas" placeholder="" />
+
+      <label for="tamano">Tamaño de la pcs:</label>
+      <select id="tamano">
+        <option value="116">Grande</option>
+        <option value="105">Pequeño</option>
+      </select>
+
+      <button onclick="calcularConos()">Calcular</button>
+
+      <center><div class="result" id="resultado"></div></center>
     </div>
   </div>
 

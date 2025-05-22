@@ -1,74 +1,71 @@
-* {
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background-color: #1e1e1e;
+}
+
+.fondo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: radial-gradient(#444 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 .container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 300px;
+  border: 2px solid black;
+  text-align: left;
+}
+
+.container h2 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+input, select {
   width: 100%;
-  min-height: 100vh;
-  background: #111;
-
+  padding: 10px;
+  margin: 5px 0 15px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
-.container .loader {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 200px;
-  height: 200px;
-}
-
-.container .loader span {
-  position: absolute;
-  top: 0;
-  left: 0;
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
   width: 100%;
-  height: 100%;
-  border: 2px solid #fff;
-  pointer-events: none;
-  animation: animateThreads 5s linear infinite;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.container .loader span:nth-child(1) {
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+button:hover {
+  background-color: #45a049;
 }
 
-.container .loader span:nth-child(2) {
-  animation-direction: reverse;
-  border-radius: 67% 33% 70% 30% / 75% 65% 35% 25%;
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #222;
 }
 
-.container .loader span:nth-child(3) {
-  animation-duration: 3s;
-  border-radius: 52% 48% 70% 30% / 41% 65% 35% 59%;
-}
-
-@keyframes animateThreads {
-  0% {
-      transform: rotate(0deg);
-  }
-  100% {
-      transform: rotate(360deg);
-  }
-}
-
-.container .loader h2 {
-  color: #fff;
-  font-family: 'Courier New', Courier, monospace;
-  font-weight: 500;
-}
 .back-button {
   position: fixed;
   top: 1rem;
   left: 1rem;
-  font-size: 2rem; /* Se adapta bien en pantallas pequeñas */
-  color: #444444;
+  font-size: 2rem;
+  color: #0d013a;
   z-index: 1000;
   text-decoration: none;
   transition: transform 0.2s ease;
@@ -76,14 +73,13 @@
 
 .back-button:hover {
   transform: scale(1.1);
-  color: #787777;
+  color: #620000;
 }
 
-/* Opcional: más ajustes en pantallas muy pequeñas */
 @media (max-width: 480px) {
   .back-button {
-    font-size: 1.8rem;
-    top: 0.8rem;
-    left: 0.8rem;
+      font-size: 1.8rem;
+      top: 0.8rem;
+      left: 0.8rem;
   }
 }
