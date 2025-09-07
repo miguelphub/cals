@@ -9,77 +9,30 @@
 </head>
 <body>
     
-   <div class="contenedor">
-  <div class="card principal" id="card-1" ontouchstart="onTouchStart(event)" ontouchend="onTouchEnd(event)">
-        <div class="card-image" style="background-color: rgb(71, 166, 185);">
-            <img src="https://s5-onboarding-digital-angular.vercel.app/assets/time_managment.svg" alt="Imagen de la escena">
-        </div>
-        <div class="card-content">
-        <h3>Título card 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut euismod mauris bibendum quam bibendum luctus. In sed erat vel arcu rutrum elementum non a turpis. Integer dignissim nisl eget tellus iaculis consectetur. </p>
-        <div class="card-navigation">
-            <div>
-                <span class="dot active-dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-            <div class="buttons">
-                <button onclick="nextCard()" class="next-button">&#8594; </button>
-            </div>
-          </div>
-        </div>
-    </div>
-  
-  
-  
-  <div class="card siguiente" id="card-2" ontouchstart="onTouchStart(event)" ontouchend="onTouchEnd(event)">
-        <div class="card-image" style="background-color: rgb(211, 212, 217);">
-            <img src="https://s5-onboarding-digital-angular.vercel.app/assets/programming.svg" alt="Imagen de la escena">
-        </div>
-        <div class="card-content">
-        <h3>Título card 2</h3>
-        <p>Proin dolor massa, feugiat sit amet fringilla ac, pellentesque vitae nisl. Curabitur at auctor velit, ut ullamcorper nulla erat id neque. Vestibulum vel sollicitudin lacus. </p>
-        <div class="card-navigation">
-            <div>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-            <div class="buttons">
-                <button onclick="previousCard()"  class="previous-button">&#8592;</button>
-                <button onclick="nextCard()"  class="next-button">&#8594; </button>
-            </div>
-          </div>
-        </div>
-    </div>
-  
-  
-    <div 
-    class="card siguiente2" id="card-3" ontouchstart="onTouchStart(event)" ontouchend="onTouchEnd(event)">
-        <div class="card-image" style="background-color: rgb(255, 209, 103);">
-            <img src="https://s5-onboarding-digital-angular.vercel.app/assets/meditation.svg" alt="Imagen de la escena">
-        </div>
-        <div class="card-content">
-        <h3>Título más largo en dos líneas para card 3</h3>
-        <p>Proin pellentesque, justo a ornare posuere, justo elit tincidunt mi, a efficitur tellus risus in elit. Aenean et neque metus. Morbi porta viverra tellus, non volutpat lectus tincidunt quis. </p>
-        <div class="card-navigation">
-            <div>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-            <div class="buttons">
-                <button onclick="previousCard()"  class="previous-button">&#8592;</button>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <div id="div-transparent-previous" class="ocultar" onclick="previousCard()"></div>
-    <div id="div-transparent-next" class="" onclick="nextCard()"></div>
-</div>
+    <div class="button-container">
+        <a href="scotch.html">
+            <button data-text="Scotch" class="button">
+                <span class="actual-text">&nbsp;Scotch&nbsp;</span>
+                <span class="hover-text" aria-hidden="true">&nbsp;Scotch&nbsp;</span>
+              </button>
+        </a>
+        
+        <a href="sellador.html">
+            <button data-text="Sellador" class="button">
+                <span class="actual-text">&nbsp;Sellador&nbsp;</span>
+                <span class="hover-text" aria-hidden="true">&nbsp;Sellador&nbsp;</span>
+              </button>
+        </a>
+        
+        <a href="hilo.html">
+            <button data-text="Hilo" class="button">
+                <span class="actual-text">&nbsp;Hilo&nbsp;</span>
+                <span class="hover-text" aria-hidden="true">&nbsp;Hilo&nbsp;</span>
+              </button>
+        </a>
+      </div>
       
-  <script src="js/inicio.js"></script>  
+      
       
 </body>
 </html>

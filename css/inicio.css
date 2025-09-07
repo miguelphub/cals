@@ -1,232 +1,62 @@
+/* === Centrado y espaciado === */
 body {
-   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #111; /* Fondo oscuro para mejor contraste */
+  margin: 0;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre botones */
+  align-items: center;
+}
+
+/* === Removiendo estilo por defecto del botón === */
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
   padding: 0;
+  border: none;
+  cursor: pointer;
 }
-.contenedor {
-  margin-top: 20px;
+
+/* === Estilo del botón === */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255, 255, 255, 0.6);
+  --animation-color: #ff9137;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
   position: relative;
-  width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    min-height: 100vh;
-    overflow-x: hidden;
-    font-family: 'Arial', sans-serif;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
 }
 
-.card {
-    width: 300px;
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-image {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    text-align: center;
-    min-height: 210px;
-    height: 40vh;
-  }
-  
-  .card-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
+/* Texto flotante al pasar el cursor */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
 
-  .card-content {
-    padding: 20px;
-    min-height: 220px;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-  }
-  
-  .card-content h3 {
-    font-size: 18px;
-    margin: 0 0 10px 0;
-    color: #333;
-  }
-  
-  .card-content p {
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 0 0 20px 0;
-    color: #666;
-  }
-
-  .card-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .dot {
-    height: 10px;
-    width: 10px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 5px;
-    display: inline-block;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-  }
-  
-  @keyframes dot-animation {
-    from {
-      background-color: #bbb;
-      width: 10px;
-    }
-    to {
-      background-color: #333;
-      width: 30px;
-    }
-  }
-  
-  @keyframes dot-animation-reverse {
-    from {
-      background-color: #333;
-      width: 30px;
-    }
-    to {
-      background-color: #bbb;
-      width: 10px;
-    }
-  }
-  
-  .active-dot {
-    animation-name: dot-animation;
-    animation-fill-mode: forwards;
-  }
-  
-  .dot:not(.active-dot) {
-    animation-name: dot-animation-reverse;
-    animation-fill-mode: forwards;
-  }
-
-  
-  .buttons {
-    display: flex;
-    gap: 20px;
-  }
-
-  .next-button {
-    background-color: #272727;
-    color: white;
-    border: 1px solid #272727;  
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .next-button:hover {
-    background-color: #939393;
-    border: 1px solid #939393;  
-
-  }
-
-  .previous-button {
-    background-color: #fff;
-    color: #272727;
-    border: 1px solid #272727;  
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-  
-  .previous-button:hover {
-    color: white;
-    border: 1px solid #939393;  
-    background-color: #939393;
-  }
-
-  .ocultar {
-    display: none;
-  }
-
-  .principal {
-    position: absolute;
-    top: 0;
-    left: calc(50% - 150px);
-    z-index: 10;
-    transition: 0.5s;
-  }
-  
-  .siguiente {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: calc(50%);
-    z-index: 8;
-    transition: 0.5s;
-    transform: scale(0.8) perspective(40px) rotateY(-0.5deg);
-    filter: blur(3px);
-  }
-
-  .siguiente2 {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: calc(50% + 120px);
-    z-index: 6;
-    transition: 0.5s;
-    transform: scale(0.6) perspective(40px) rotateY(-0.5deg);
-    filter: blur(8px);
-  }
-
-  .anterior {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: calc(50% - 300px);
-    z-index: 8;
-    transition: 0.5s;
-    transform: scale(0.8) perspective(40px) rotateY(0.5deg);
-    filter: blur(3px);
-
-  }
-
-  .anterior2 {
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: calc(50% - 420px);
-    z-index: 6;
-    transition: 0.5s;
-    transform: scale(0.6) perspective(40px) rotateY(0.5deg);
-    filter: blur(8px);
-  }
-
-  #div-transparent-previous {
-    position: absolute;
-    width: 250px;
-    height: 100%;
-    right: calc(50% + 150px);
-    top: 0;
-    z-index: 9;
-    cursor: pointer;
-  }
-
-  #div-transparent-next {
-    position: absolute;
-    width: 250px;
-    height: 100%;
-    left: calc(50% + 150px);
-    top: 0;
-    z-index: 9;
-    cursor: pointer;
-  }
+/* Efecto hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color));
+}
